@@ -228,4 +228,55 @@ Head Office Login Head Office
 </div>
 
 </div>
-My personal AI Prompt 
+<script>
+
+let slides=document.querySelectorAll(".slide");
+let dots=document.querySelectorAll(".dot");
+
+let index=0;
+
+function showSlide(n){
+
+slides.forEach((slide)=>{
+slide.classList.remove("active");
+});
+
+dots.forEach((dot)=>{
+dot.classList.remove("active");
+});
+
+slides[n].classList.add("active");
+dots[n].classList.add("active");
+
+}
+
+function nextSlide(){
+
+index++;
+
+if(index>=slides.length){
+index=0;
+}
+
+showSlide(index);
+
+}
+
+setInterval(nextSlide,3000);
+
+dots.forEach((dot,i)=>{
+
+dot.addEventListener("click",()=>{
+
+index=i;
+
+showSlide(index);
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
